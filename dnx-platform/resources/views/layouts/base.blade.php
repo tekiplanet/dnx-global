@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0B0F13">
+    <title>@yield('title', 'DNX Global')</title>
+    @yield('meta')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('styles')
+</head>
+<body>
+    @stack('before-body')
+
+    <div id="app">
+        @yield('hero')
+        <main id="content">
+            @yield('content')
+        </main>
+    </div>
+
+    @stack('scripts')
+</body>
+</html>
